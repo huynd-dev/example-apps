@@ -37,20 +37,3 @@ spec:
     targetPort: 8080
   selector:
     app: serve
----
-apiVersion: policy.karmada.io/v1alpha1
-kind: PropagationPolicy
-metadata:
-  name: mcs-workload
-spec:
-  resourceSelectors:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: serve
-    - apiVersion: v1
-      kind: Service
-      name: serve
-  placement:
-    clusterAffinity:
-      clusterNames:
-        - cluster-1
