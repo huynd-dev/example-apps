@@ -1,13 +1,15 @@
-# propagationpolicy.yaml
 apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
-  name: example-policy # The default namespace is `default`.
+  name: mcs-workload
 spec:
   resourceSelectors:
     - apiVersion: apps/v1
       kind: Deployment
-      name: serve # If no namespace is specified, the namespace is inherited from the parent object scope.
+      name: serve
+    - apiVersion: v1
+      kind: Service
+      name: serve
   placement:
     clusterAffinity:
       clusterNames:
