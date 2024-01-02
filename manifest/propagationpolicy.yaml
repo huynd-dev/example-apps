@@ -7,7 +7,7 @@ spec:
   resourceSelectors:
     - apiVersion: apps/v1
       kind: Deployment
-      name: nginx # If no namespace is specified, the namespace is inherited from the parent object scope.
+      name: productpage # If no namespace is specified, the namespace is inherited from the parent object scope.
   placement:
     clusterAffinity:
       clusterNames:
