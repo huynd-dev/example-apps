@@ -11,6 +11,9 @@ spec:
     - apiVersion: v1
       kind: Service
       name: podinfo
+    - apiVersion: v1
+      kind: Namespace
+      name: podinfo
   placement:
     clusterAffinity:
       clusterNames:
