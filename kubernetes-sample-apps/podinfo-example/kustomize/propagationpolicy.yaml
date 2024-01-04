@@ -2,6 +2,7 @@ apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
   name: podinfo-PropagationPolicy
+  namespace: podinfo
 spec:
   resourceSelectors:
     - apiVersion: apps/v1
