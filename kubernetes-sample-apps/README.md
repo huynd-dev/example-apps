@@ -1,4 +1,4 @@
-# DigitalOcean Kubernetes Sample Apps
+# Kubernetes Sample Apps
 
 This repository contains a collection of Kubernetes applications that can be used in various projects. Each sample application has a dedicated folder to keep all resources, and main documentation.
 
