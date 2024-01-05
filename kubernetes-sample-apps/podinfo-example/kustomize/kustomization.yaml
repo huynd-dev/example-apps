@@ -13,3 +13,4 @@ commonAnnotations:
 resources:
   - resources/namespace.yaml
   - github.com/stefanprodan/podinfo/kustomize
+  - propagationpolicy.yaml
