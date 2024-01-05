@@ -14,6 +14,9 @@ spec:
     - apiVersion: v1
       kind: Namespace
       name: podinfo
+    - apiVersion: autoscaling/v2
+      kind: HorizontalPodAutoscaler
+      name: podinfo
   placement:
     clusterAffinity:
       clusterNames:
