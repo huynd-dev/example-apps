@@ -19,8 +19,6 @@ spec:
         - name: backend
           # Replace the `<>` placeholders with your docker registry info
           image: ndhuyvp111/custom:game_2048_v1
-          imagePullSecrets:
-          - name: regcred
           ports:
             - name: http
               containerPort: 8080
@@ -31,6 +29,8 @@ spec:
             limits:
               cpu: 300m
               memory: 200Mi
+      imagePullSecrets:
+      - name: regcred
           # securityContext:
           #   readOnlyRootFilesystem: true
           #   runAsNonRoot: true
