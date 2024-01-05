@@ -1,7 +1,7 @@
 apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
-  name: podinfo-propagationpolicy
+  name: game-2048-propagationpolicy
   namespace: game-2048
 spec:
   resourceSelectors:
