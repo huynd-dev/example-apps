@@ -12,30 +12,19 @@ spec:
         clusterNames:
           - cluster-2
       overriders:
-        labelsOverrider:
-          - operator: add
+        plaintext:
+          - path: /spec/template/spec/containers/0/env/0
+            operator: add
             value:
-              env: skoala-dev
-          - operator: add
-            value:
-              env-stat: skoala-stage
-          - operator: remove
-            value:
-              for: for
-          - operator: replace
-            value:
-              bar: test
+              - name: CLUSTER_NAME
+                value: cluster2
     - targetCluster:
         clusterNames:
           - cluster-1
       overriders:
-        annotationsOverrider:
-          - operator: add
+        plaintext:
+          - path: /spec/template/spec/containers/0/env/0
+            operator: add
             value:
-              env: skoala-stage
-          - operator: remove
-            value:
-              bom: bom
-          - operator: replace
-            value:
-              emma: sophia
+              - name: CLUSTER_NAME
+                value: cluster1
