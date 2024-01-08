@@ -6,7 +6,7 @@ spec:
   resourceSelectors:
     - apiVersion: apps/v1
       kind: Deployment
-      name: nginx
+      name: metapod
   placement:
     clusterAffinity:
       clusterNames:
