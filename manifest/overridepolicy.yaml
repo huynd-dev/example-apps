@@ -14,7 +14,7 @@ spec:
       overriders:
         plaintext:
           - path: /spec/template/spec/containers/9/env
-            operator: add
+            operator: replace
             value:
               - name: CLUSTER_NAME
                 value: cluster2
@@ -24,7 +24,7 @@ spec:
       overriders:
         plaintext:
           - path: /spec/template/spec/containers/9/env
-            operator: add
+            operator: replace
             value:
               - name: CLUSTER_NAME
                 value: cluster1
