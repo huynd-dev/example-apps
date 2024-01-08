@@ -13,7 +13,7 @@ spec:
           - cluster-2
       overriders:
         plaintext:
-          - path: /spec/template/spec/containers/0/env/0
+          - path: /spec/template/spec/containers/9/env/0
             operator: add
             value:
               - name: CLUSTER_NAME
@@ -23,7 +23,7 @@ spec:
           - cluster-1
       overriders:
         plaintext:
-          - path: /spec/template/spec/containers/0/env/0
+          - path: /spec/template/spec/containers/9/env/0
             operator: add
             value:
               - name: CLUSTER_NAME
