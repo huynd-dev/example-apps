@@ -10,6 +10,9 @@ spec:
     - apiVersion: v1
       kind: Service
       name: metapod
+    - apiVersion: v1
+      kind: Namespace
+      name: metapod
   placement:
     clusterAffinity:
       clusterNames:
