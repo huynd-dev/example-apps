@@ -1,0 +1,127 @@
+ROUP:      policy.karmada.io
+KIND:       PropagationPolicy
+VERSION:    v1alpha1
+
+DESCRIPTION:
+    PropagationPolicy represents the policy that propagates a group of resources
+    to one or more clusters.
+    
+FIELDS:
+  apiVersion	<string>
+  kind	<string>
+  metadata	<ObjectMeta>
+    annotations	<map[string]string>
+    creationTimestamp	<string>
+    deletionGracePeriodSeconds	<integer>
+    deletionTimestamp	<string>
+    finalizers	<[]string>
+    generateName	<string>
+    generation	<integer>
+    labels	<map[string]string>
+    managedFields	<[]ManagedFieldsEntry>
+      apiVersion	<string>
+      fieldsType	<string>
+      fieldsV1	<FieldsV1>
+      manager	<string>
+      operation	<string>
+      subresource	<string>
+      time	<string>
+    name	<string>
+    namespace	<string>
+    ownerReferences	<[]OwnerReference>
+      apiVersion	<string> -required-
+      blockOwnerDeletion	<boolean>
+      controller	<boolean>
+      kind	<string> -required-
+      name	<string> -required-
+      uid	<string> -required-
+    resourceVersion	<string>
+    selfLink	<string>
+    uid	<string>
+  spec	<Object> -required-
+    association	<boolean>
+    conflictResolution	<string>
+    dependentOverrides	<[]string>
+    failover	<Object>
+      application	<Object>
+        decisionConditions	<Object> -required-
+          tolerationSeconds	<integer>
+        gracePeriodSeconds	<integer>
+        purgeMode	<string>
+    placement	<Object>
+      clusterAffinities	<[]Object>
+        affinityName	<string> -required-
+        clusterNames	<[]string>
+        exclude	<[]string>
+        fieldSelector	<Object>
+          matchExpressions	<[]Object>
+            key	<string> -required-
+            operator	<string> -required-
+            values	<[]string>
+        labelSelector	<Object>
+          matchExpressions	<[]Object>
+            key	<string> -required-
+            operator	<string> -required-
+            values	<[]string>
+          matchLabels	<map[string]string>
+      clusterAffinity	<Object>
+        clusterNames	<[]string>
+        exclude	<[]string>
+        fieldSelector	<Object>
+          matchExpressions	<[]Object>
+            key	<string> -required-
+            operator	<string> -required-
+            values	<[]string>
+        labelSelector	<Object>
+          matchExpressions	<[]Object>
+            key	<string> -required-
+            operator	<string> -required-
+            values	<[]string>
+          matchLabels	<map[string]string>
+      clusterTolerations	<[]Object>
+        effect	<string>
+        key	<string>
+        operator	<string>
+        tolerationSeconds	<integer>
+        value	<string>
+      replicaScheduling	<Object>
+        replicaDivisionPreference	<string>
+        replicaSchedulingType	<string>
+        weightPreference	<Object>
+          dynamicWeight	<string>
+          staticWeightList	<[]Object>
+            targetCluster	<Object> -required-
+              clusterNames	<[]string>
+              exclude	<[]string>
+              fieldSelector	<Object>
+                matchExpressions	<[]Object>
+                  key	<string> -required-
+                  operator	<string> -required-
+                  values	<[]string>
+              labelSelector	<Object>
+                matchExpressions	<[]Object>
+                  key	<string> -required-
+                  operator	<string> -required-
+                  values	<[]string>
+                matchLabels	<map[string]string>
+            weight	<integer> -required-
+      spreadConstraints	<[]Object>
+        maxGroups	<integer>
+        minGroups	<integer>
+        spreadByField	<string>
+        spreadByLabel	<string>
+    preemption	<string>
+    priority	<integer>
+    propagateDeps	<boolean>
+    resourceSelectors	<[]Object> -required-
+      apiVersion	<string> -required-
+      kind	<string> -required-
+      labelSelector	<Object>
+        matchExpressions	<[]Object>
+          key	<string> -required-
+          operator	<string> -required-
+          values	<[]string>
+        matchLabels	<map[string]string>
+      name	<string>
+      namespace	<string>
+    schedulerName	<string>
