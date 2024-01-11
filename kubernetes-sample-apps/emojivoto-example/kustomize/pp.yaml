@@ -1,12 +1,12 @@
-# apiVersion: policy.karmada.io/v1alpha1
-# kind: PropagationPolicy
-# metadata:
-#   name: emoji-propagationpolicy
-#   namespace: emoji
-# spec:
-#   resourceSelectors:
-#     - namespace: emoji
-#   placement:
-#     clusterAffinity:
-#       clusterNames:
-#         - cluster-1
+apiVersion: policy.karmada.io/v1alpha1
+kind: PropagationPolicy
+metadata:
+  name: emoji-propagationpolicy
+  namespace: emoji
+spec:
+  resourceSelectors:
+    - namespace: emoji
+  placement:
+    clusterAffinity:
+      clusterNames:
+        - cluster-1
