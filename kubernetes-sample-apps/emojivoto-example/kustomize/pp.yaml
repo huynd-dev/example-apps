@@ -2,12 +2,10 @@ apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
   name: emoji-propagationpolicy
-  namespace: podinfo
+  namespace: emoji
 spec:
   resourceSelectors:
-    - labelSelector
-        matchLabels
-          app.kubernetes.io/instance: emojivoto
+    - namespace: emoji
   placement:
     clusterAffinity:
       clusterNames:
