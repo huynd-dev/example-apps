@@ -14,14 +14,6 @@ spec:
     - apiVersion: v1
       kind: Namespace
       name: game-2048
-  failover:
-    application:
-      preConditions:
-        delaySeconds: 5000
-      decisionConditions:
-        tolerationSeconds: 200
-        healthyState: 
-        - Unhealthy
   placement:
     clusterAffinity:
       clusterNames:
