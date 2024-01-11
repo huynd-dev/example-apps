@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: metapod
+  namespace: metapod
+spec:
+  rules:
+  - host: demomesh.quynhlab.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: metapod
+            port:
+              number: 80
+        path: /metapod
+        pathType: Prefix
