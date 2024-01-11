@@ -2,7 +2,7 @@ apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
   name: emoji-propagationpolicy
-  namespace: emoji
+  namespace: emojivoto
 spec:
   resourceSelectors:
     - namespace: emojivoto
