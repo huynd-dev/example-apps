@@ -1,8 +1,42 @@
+# apiVersion: policy.karmada.io/v1alpha1
+# kind: PropagationPolicy
+# metadata:
+#   name: game-2048-propagationpolicy
+#   namespace: game-2048
+# spec:
+#   resourceSelectors:
+#     - apiVersion: apps/v1
+#       kind: Deployment
+#       name: game-2048
+#     - apiVersion: v1
+#       kind: Service
+#       name: game-2048
+#     - apiVersion: v1
+#       kind: Namespace
+#       name: game-2048
+#   placement:
+#     clusterAffinity:
+#       clusterNames:
+#         - cluster-1
+#         - cluster-2
+#     replicaScheduling:
+#       replicaDivisionPreference: Weighted
+#       replicaSchedulingType: Divided
+#       weightPreference:
+#         staticWeightList:
+#           - targetCluster:
+#               clusterNames:
+#                 - cluster-1
+#             weight: 1
+#           - targetCluster:
+#               clusterNames:
+#                 - cluster-2
+#             weight: 2
+# ---
 apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
   name: game-2048-propagationpolicy
-  namespace: game-2048
 spec:
   resourceSelectors:
     - apiVersion: apps/v1
@@ -14,21 +48,16 @@ spec:
     - apiVersion: v1
       kind: Namespace
       name: game-2048
+  failover:
+    application:
+      preConditions:
+        delaySeconds: 5000
+      decisionConditions:
+        tolerationSeconds: 200
+        healthyState: 
+        - Unhealthy
   placement:
     clusterAffinity:
       clusterNames:
         - cluster-1
         - cluster-2
-    replicaScheduling:
-      replicaDivisionPreference: Weighted
-      replicaSchedulingType: Divided
-      weightPreference:
-        staticWeightList:
-          - targetCluster:
-              clusterNames:
-                - cluster-1
-            weight: 1
-          - targetCluster:
-              clusterNames:
-                - cluster-2
-            weight: 2
