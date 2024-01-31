@@ -30,6 +30,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    service.cilium.io/global: "true"
   name: serve
 spec:
   ports:
