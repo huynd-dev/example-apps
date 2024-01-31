@@ -11,10 +11,10 @@ spec:
     - apiVersion: apps/v1
       kind: Deployment
       name: 
-      - vote-bot
-      - voting
-      - moji-svc
-      - we
+        - vote-bot
+        - voting
+        - moji-svc
+        - web
     - apiVersion: v1
       kind: Service
       name: emoji-svc
