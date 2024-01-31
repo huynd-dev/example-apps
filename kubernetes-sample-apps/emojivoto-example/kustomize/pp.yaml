@@ -5,7 +5,21 @@ metadata:
   namespace: emojivoto
 spec:
   resourceSelectors:
-    - namespace: emojivoto
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: emoji
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: vote-bot
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: voting
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: web
+    - apiVersion: v1
+      kind: Service
+      name: emoji-svc
   placement:
     clusterAffinity:
       clusterNames:
