@@ -27,6 +27,7 @@ pipeline {
                 script {
 
                       def IMAGE = "${REGISTRY_URL}/profile-service:${TAG}"
+                          echo ${IMAGE}
                      echo "hello"
                 }
             }
