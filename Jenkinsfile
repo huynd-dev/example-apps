@@ -20,5 +20,13 @@ pipeline {
                             '''
                         }
              }
+        stage('Build profile-service 1') {
+                 steps {
+                        sh '''
+                        echo 1
+                        echo 2
+                        '''
+                        }
+             }
     }
 }
