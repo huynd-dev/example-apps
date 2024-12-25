@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     echo 12
-                    IMAGE = '${REGISTRY_URL}/profile-service:${TAG}'
+                    def IMAGE = '${REGISTRY_URL}/profile-service:${TAG}'
                     echo "${IMAGE}"
                     echo 1
                 }
