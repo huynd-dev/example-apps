@@ -3,16 +3,16 @@ TAG=${RANDOM:8:9}
 SERVICE=$1
 
 cd $SERVICE
+echo $SERVICE
+# mvn package -DskipTests
+# sleep 30s
 
-mvn package -DskipTests
-sleep 30s
+# docker build -t dannhanong/$SERVICE:$TAG .
+# sleep 30s
 
-docker build -t dannhanong/$SERVICE:$TAG .
-sleep 30s
+# docker push dannhanong/$SERVICE:$TAG
+# sleep 30s
 
-docker push dannhanong/$SERVICE:$TAG
-sleep 30s
+# kubectl set image deployment/$SERVICE $SERVICE=dannhanong/$SERVICE:$TAG
 
-kubectl set image deployment/$SERVICE $SERVICE=dannhanong/$SERVICE:$TAG
-
-echo "Deploy $SERVICE success!"
+# echo "Deploy $SERVICE success!"
