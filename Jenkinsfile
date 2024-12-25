@@ -18,6 +18,16 @@ pipeline {
                             script {
                                 def IMAGE = "$REGISTRY_URL/profile-service:$TAG"
                                 echo "${IMAGE}"
+                                echo 1
+                            }
+                        }
+                }
+        stage('Build profile-service 1') {
+                        steps {
+                            script {
+                                def IMAGE = "$REGISTRY_URL/profile-service:$TAG"
+                                echo "${IMAGE}"
+                                echo 1
                             }
                         }
                 }
