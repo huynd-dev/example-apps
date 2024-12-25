@@ -10,7 +10,6 @@ pipeline {
         stage('Build profile-service 2') {
                         steps {
                             sh 'ls -la'
-                            sh 'bash build-and-deploy.sh profile-service'
                     }
             }
     }
