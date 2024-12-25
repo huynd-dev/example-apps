@@ -15,7 +15,7 @@ pipeline {
         stage('Build profile-service') {
                 when { changeset "profile-service/*"}
                         steps {
-                            IMAGE = "$REGISTRY_URL/profile-service:$TAG"
+                            def IMAGE = "$REGISTRY_URL/profile-service:$TAG"
                             echo "${IMAGE}"
                         }
                 }
