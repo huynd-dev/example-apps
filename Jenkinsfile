@@ -16,7 +16,7 @@ pipeline {
                 when { changeset "profile-service/*"}
                         steps {
                             script {
-                                def IMAGE = "$REGISTRY_URL/profile-service:$TAG"
+                                def IMAGE = "${REGISTRY_URL}/profile-service:${TAG}"
                                 echo "${IMAGE}"
                                 echo 1
                             }
@@ -28,21 +28,6 @@ pipeline {
                     IMAGE = '$REGISTRY_URL/profile-service:$TAG'
                     echo "${IMAGE}"
                     echo 1
-                        }
-                    }
-                }
-        stage('Build service-folder') {
-                when { changeset "service-folder/*"}
-                        steps {
-                            sh 'cd service-folder'
-                            sh 'mvn package -DskipTests'
-                        }
-        }
-        stage('Deploy') {
-            steps {
-                script {
-                    env.FILENAME = 'Hehe'
-                    a = 'helllo'
                 }
             }
         }
