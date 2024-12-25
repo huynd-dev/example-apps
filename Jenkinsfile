@@ -1,3 +1,4 @@
+def 
 pipeline {
     agent any 
     environment {
@@ -25,10 +26,18 @@ pipeline {
         stage('Build profile-service 1') {
             steps {
                 script {
-
                       def IMAGE = "${REGISTRY_URL}/profile-service:${TAG}"
-                          echo IMAGE
-                     echo "hello"
+                      echo IMAGE
+                      echo "hello"
+                }
+            }
+        }
+        stage('Build profile-service 1') {
+            steps {
+                script {
+                      def IMAGE = "${REGISTRY_URL}/profile-service:${TAG}"
+                      echo "hello"
+                      sh 'echo ${IMAGE}'
                 }
             }
         }
