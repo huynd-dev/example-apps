@@ -14,3 +14,5 @@ docker push dannhanong/$SERVICE:$TAG
 sleep 30s
 
 kubectl set image deployment/$SERVICE $SERVICE=dannhanong/$SERVICE:$TAG
+
+echo "Deploy $SERVICE success!"
