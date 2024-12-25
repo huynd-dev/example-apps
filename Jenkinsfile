@@ -3,7 +3,7 @@ pipeline {
     environment {
     REGISTRY_URL = 'dannhanong'
     max = 100000000
-    TAG = "${Math.abs(new Random())}"
+    TAG = "${Math.abs(new Random().nextInt(max+1))}"
     }
     stages {
         stage('Test'){
