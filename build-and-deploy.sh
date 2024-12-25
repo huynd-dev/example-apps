@@ -1,6 +1,9 @@
 #!/bin/bash
 TAG=${RANDOM:8:9}
 SERVICE=$1
+
+cd $SERVICE
+
 mvn package -DskipTests
 sleep 30s
 
