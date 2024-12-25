@@ -3,7 +3,7 @@ TAG=${RANDOM:8:9}
 SERVICE=$1
 
 cd $SERVICE
-echo $SERVICE
+echo day la service $SERVICE
 # mvn package -DskipTests
 # sleep 30s
 
