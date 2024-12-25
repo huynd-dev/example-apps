@@ -12,7 +12,7 @@ pipeline {
                             sh 'bash ./build-and-deploy.sh profile-service'
                     }
             }
-        stage('Build profile-service') {
+        stage('Build profile-service 2') {
                         steps {
                             sh 'bash ./build-and-deploy.sh profile-service'
                     }
