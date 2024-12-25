@@ -15,8 +15,10 @@ pipeline {
         stage('Build profile-service') {
                 when { changeset "profile-service/*"}
                         steps {
-                            def IMAGE = "$REGISTRY_URL/profile-service:$TAG"
-                            echo "${IMAGE}"
+                            script {
+                                def IMAGE = "$REGISTRY_URL/profile-service:$TAG"
+                                echo "${IMAGE}"
+                            }
                         }
                 }
         stage('Build service-folder') {
