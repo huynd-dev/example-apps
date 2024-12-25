@@ -9,8 +9,7 @@ pipeline {
             }
         stage('Build profile-service 2') {
                         steps {
-                            service = 'profile-service'
-                            sh 'bash build-and-deploy.sh $profile-service'
+                            sh '''bash build-and-deploy.sh profile-service'''
                     }
             }
     }
