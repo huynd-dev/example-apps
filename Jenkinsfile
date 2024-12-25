@@ -9,27 +9,16 @@ pipeline {
         stage('Test'){
             steps {
                 git branch: 'sub', credentialsId: 'huynd1', url: 'git@github.com:dannhanong/links-manager.git'
-                sh "ls -lat"
             }
         }
         stage('Build profile-service') {
                 when { changeset "profile-service/*"}
                         steps {
-                            script {
-                                def IMAGE = "${REGISTRY_URL}/profile-service:${TAG}"
-                                echo "${IMAGE}"
-                                echo 1
-                            }
+                            sh '''
+                            echo 1
+                            echo 2
+                            '''
                         }
-                }
-        stage('Build profile-service 1') {
-            steps {
-                script {
-                      IMAGE = "${REGISTRY_URL}/profile-service:${TAG}"
-                      echo "hello"
-                      sh 'echo ${IMAGE}'
-                }
-            }
-        }
+             }
     }
 }
