@@ -25,6 +25,7 @@ pipeline {
         stage('Build profile-service 1') {
             steps {
                 script {
+                    echo 12
                     IMAGE = '${REGISTRY_URL}/profile-service:${TAG}'
                     echo "${IMAGE}"
                     echo 1
