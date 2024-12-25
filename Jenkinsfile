@@ -25,7 +25,7 @@ pipeline {
         stage('Build profile-service 1') {
             steps {
                 script {
-                
+                     echo "hello"
                 }
             }
         }
