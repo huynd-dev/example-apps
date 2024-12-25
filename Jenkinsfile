@@ -23,13 +23,13 @@ pipeline {
                         }
                 }
         stage('Build profile-service 1') {
-                        steps {
-                            script {
-                                IMAGE = '$REGISTRY_URL/profile-service:$TAG'
-                                echo "${IMAGE}"
-                                echo 1
-                            }
+            steps {
+                script {
+                    IMAGE = '$REGISTRY_URL/profile-service:$TAG'
+                    echo "${IMAGE}"
+                    echo 1
                         }
+                    }
                 }
         stage('Build service-folder') {
                 when { changeset "service-folder/*"}
@@ -44,11 +44,6 @@ pipeline {
                     env.FILENAME = 'Hehe'
                     a = 'helllo'
                 }
-            }
-        }
-        stage('Deploy1') {
-            steps {
-                sh 'echo ${a}'
             }
         }
     }
