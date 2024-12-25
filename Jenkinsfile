@@ -23,6 +23,7 @@ pipeline {
         stage('Build profile-service 1') {
                  steps {
                         sh '''
+                        #!/bin/bash
                         a = 1
                         b = 2
                         echo $a
